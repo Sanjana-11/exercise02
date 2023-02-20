@@ -31,11 +31,11 @@ public class Main {
 		((Firefox) browser).addContainer("facebookContainer");
 		((Firefox) browser).addContainer("Mails");
 		((Firefox) browser).addContainer("PrivateBrowsing");
-//		String[] containers   =     ((Firefox) browser).viewAllContainers(); 
-		((Firefox) browser).leaveContainer("PrivateBrowsing"); // delete given container​
-		String[] containers = ((Firefox) browser).viewAllContainers(); // List 2 container names
+		((Firefox) browser).leaveContainer("PrivateBrowsing"); 
+		String[] containers = ((Firefox) browser).viewAllContainers(); 
 		for (int i = 0; i < containers.length; i++)
 			System.out.println(containers[i]);
+		
 
 	}
 }
