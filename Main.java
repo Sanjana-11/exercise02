@@ -2,6 +2,14 @@ package exercise02;
 
 public class Main {
 	public static void main(String[] args) {
+		
+		Browser browse = new Firefox();
+		browse.whoAmI();
+		
+				
+		Browser b = new GoogleChrome();
+		((GoogleChrome) b).getVersionNumber();
+		
 		Browser tabOne = new GoogleChrome();
 		Browser tabTwo = new Firefox();
 		Browser tabThree = new Firefox();
@@ -35,6 +43,7 @@ public class Main {
 		String[] containers = ((Firefox) browser).viewAllContainers(); 
 		for (int i = 0; i < containers.length; i++)
 			System.out.println(containers[i]);
+		
 		
 
 	}
