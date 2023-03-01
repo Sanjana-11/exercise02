@@ -25,9 +25,10 @@ public class Firefox extends Browser implements MultipleAccountContainers{
 		 containerList.remove(containerName);
 	} 
 	
-	public String[] viewAllContainers() {
-		String[] containerArray = new String[containerList.size()];
-        return containerList.toArray(containerArray);
+	public void viewAllContainers() {
+		for (String containerElement : containerList) {
+			System.out.println(containerElement);
+		}
     }	
 	
 }

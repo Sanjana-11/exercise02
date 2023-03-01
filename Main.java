@@ -2,14 +2,22 @@ package exercise02;
 
 public class Main {
 	public static void main(String[] args) {
+
+		Browser browser = new Firefox();
+		browser.whoAmI();
 		
-		Browser browse = new Firefox();
-		browse.whoAmI();
-		
-				
-		Browser b = new GoogleChrome();
-		((GoogleChrome) b).getVersionNumber();
-		
+		GoogleChrome google = new GoogleChrome();
+		System.out.println(google.versionNumber);
+
+		Browser chrome = new GoogleChrome();
+		((GoogleChrome) chrome).getVersionNumber();
+
+		((GoogleChrome) chrome).setPermissions("Location", true);
+		((GoogleChrome) chrome).showPermissions();
+
+		((GoogleChrome) chrome).setPermissions(true,true,true);
+		((GoogleChrome) chrome).showPermissions();
+
 		Browser tabOne = new GoogleChrome();
 		Browser tabTwo = new Firefox();
 		Browser tabThree = new Firefox();
@@ -35,15 +43,11 @@ public class Main {
 		System.out.println(countGoogleChrome);
 		System.out.println(countFirefox);
 
-		Browser browser = new Firefox();
 		((Firefox) browser).addContainer("facebookContainer");
 		((Firefox) browser).addContainer("Mails");
 		((Firefox) browser).addContainer("PrivateBrowsing");
-		((Firefox) browser).leaveContainer("PrivateBrowsing"); 
-		String[] containers = ((Firefox) browser).viewAllContainers(); 
-		for (int i = 0; i < containers.length; i++)
-			System.out.println(containers[i]);
-		
+		((Firefox) browser).leaveContainer("PrivateBrowsing");
+		((Firefox) browser).viewAllContainers();
 		
 
 	}

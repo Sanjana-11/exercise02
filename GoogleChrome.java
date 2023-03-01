@@ -1,40 +1,46 @@
 package exercise02;
 
-public class GoogleChrome extends Browser{
-	
+public class GoogleChrome extends Browser {
+
 	boolean isLocationAccessible;
 	boolean isCameraAccessible;
 	boolean isMicrophoneAccessible;
-    String versionNumber = "1.0";
-    
-    public void getVersionNumber() {
-    	System.out.println(versionNumber);
-    	
-    }
+	final String versionNumber = "1.0";
 
-    public GoogleChrome(){
+	public void getVersionNumber() {
+		System.out.println(versionNumber);
+
+	}
+
+	public GoogleChrome() {
 		super();
 	}
-    
-    public void whoAmI() {
+
+	public void whoAmI() {
 		System.out.println("I am Google Chrome");
 	}
-    public void setLocation(boolean isLocationAccessible) {
-	    this.isLocationAccessible = isLocationAccessible;
-	  }
-    
-    public void setCamera(boolean isCameraAccessible) {
-    	this.isCameraAccessible = isCameraAccessible;
-    }
-    
-    public void setMicrophone(boolean isMicrophoneAccessible) {
-    	this.isMicrophoneAccessible = isMicrophoneAccessible;
-    }
-	
+
+	public void setPermissions(String permissionType, boolean isAccessible) {
+		if (permissionType.equalsIgnoreCase("location")) {
+			this.isLocationAccessible = isAccessible;
+		} else if (permissionType.equalsIgnoreCase("camera")) {
+			this.isCameraAccessible = isAccessible;
+		} else if (permissionType.equalsIgnoreCase("microphone")) {
+			this.isMicrophoneAccessible = isAccessible;
+		}
+	}
+
 	public void setPermissions(boolean isLocationAccessible, boolean isCameraAccessible, boolean isMicrophoneAccessible) {
-	    this.isLocationAccessible = isLocationAccessible;
-	    this.isCameraAccessible = isCameraAccessible;
-	    this.isMicrophoneAccessible = isMicrophoneAccessible;
-	  }
+		this.isLocationAccessible = isLocationAccessible;
+		this.isCameraAccessible = isCameraAccessible;
+		this.isMicrophoneAccessible = isMicrophoneAccessible;
+	}
+
+	public void showPermissions() {
+		System.out.println("Location Accessible : " + isLocationAccessible);
+		System.out.println("Camera Accessible : " + isCameraAccessible);
+		System.out.println("Microphone Accessible : " + isMicrophoneAccessible);
+
+	}
 
 }
